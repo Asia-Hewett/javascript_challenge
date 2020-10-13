@@ -22,15 +22,14 @@ function runEnter() {
 
   // Get the value property of the input element
   let inputValue = inputElement.property('value');
-  console.log(inputValue);
-//   console.log(tableData);
+//   console.log(inputValue);
 
-//   // Use the form input to filter the data by blood type
-//   let filteredData = tableData.filter(person => person.bloodType === inputValue);
-//   console.log(filteredData);
+  // Use the form input to filter the data by blood type
+  let filteredData = tableData.filter(sightings => sightings.datetime === inputValue);
+  console.log(filteredData);
 
 //   // BONUS: Calculate summary statistics for the age field of the filtered data
-//   let ages = filteredData.map(person => person.age);
+//   let ages = filteredData.map(sightings => sightings.age);
 
 //   // First, create an array with just the age values
 //   let mean = math.mean(ages);
