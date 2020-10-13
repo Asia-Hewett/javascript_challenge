@@ -7,6 +7,9 @@ let button = d3.select("#filter-btn");
 // Select the form
 let form = d3.select("#form");
 
+// Targeting the table body
+let tbody = d3.select("tbody");
+
 // Create event handlers 
 button.on("click", runEnter);
 form.on("submit",runEnter);
@@ -26,30 +29,19 @@ function runEnter() {
 
   // Use the form input to filter the data by blood type
   let filteredData = tableData.filter(sightings => sightings.datetime === inputValue);
-  console.log(filteredData);
+//   console.log(filteredData);
 
-//   // BONUS: Calculate summary statistics for the age field of the filtered data
-//   let ages = filteredData.map(sightings => sightings.age);
-
-//   // First, create an array with just the age values
-//   let mean = math.mean(ages);
-//   let median = math.median(ages);
-//   let mode = math.mode(ages);
-//   let variance = math.var(ages);
-//   let standardDeviation = math.std(ages);
-
-//   // lets find the unordered list
-//   let list = d3.select(".summary");
-
-//   // Removing the previous data
-//   list.html("");
-
-//   list.append('li').text(`Mean: ${mean}`);
-//   list.append('li').text(`Median: ${median}`);
-//   list.append('li').text(`Mode: ${mode}`);
-//   list.append('li').text(`Variance: ${var}`);
-//   list.append('li').text(`StandardDeviation: ${std}`);
-
+// Loop that appends data to tables
+    filteredData.forEach((sightingInfo) => {
+        console.log(sightingInfo);
+        let row = tbody.append('tr');
+        Object.entries(sightingInfo).forEach(([key, value]) => {
+            console.log(key, value);
+            let cell = row.append('td');
+            cell.text(value);
+        });
+    });
 };
+
 
 
