@@ -1,6 +1,7 @@
 # JavaScript Homework - JavaScript and DOM Manipulation
 
-## For a live demonstration of the web page, follow this link! https://asia-hewett.github.io/javascript_challenge/
+### For a live demonstration of the web page, follow this link! 
+https://asia-hewett.github.io/javascript_challenge/
 
 ## Background
 
