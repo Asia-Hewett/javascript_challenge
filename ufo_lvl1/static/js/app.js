@@ -31,6 +31,9 @@ function runEnter() {
   let filteredData = tableData.filter(sightings => sightings.datetime === inputValue);
 //   console.log(filteredData);
 
+// Clearing the previously entered data
+    tbody.html("")
+
 // Loop that appends data to tables
     filteredData.forEach((sightingInfo) => {
         console.log(sightingInfo);
